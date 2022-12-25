@@ -8,7 +8,7 @@ const Homepage = () => {
   const [notices, setNotices] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch('https://immense-inlet-62545.herokuapp.com/products');
+    const response = await fetch('http://localhost:8080/products');
     const data = await response.json();
     setNotices(data);
     console.log(data);
