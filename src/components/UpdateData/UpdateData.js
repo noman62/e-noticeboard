@@ -1,205 +1,180 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
 import './UpdateData.css'
+
 const UpdateData = () => {
-    const [imageURL, setImageURL] = useState(null);
-    const [singleNotice,setSingleNotice]=useState({})
-    const {id}=useParams();
-    const [user, setUser] = useState({
-        noticeNo: '',
-        title: '',
-        shortTitle:'',
-        batchName:'',
-        date:'',
-        utitle:'',
-        imageURL: ''
+  const { id } = useParams()
+  const [singleData, setSingleData] = useState([])
+  const [name1, setName1] = useState([])
+  const [email, setEmail] = useState([])
+  const [name2, setName2] = useState([])
+  const [number1, setNumber1] = useState([])
+  const [number2, setNumber2] = useState([])
+
+
+
+  useEffect(() => {
+    const getOfficeInfo = async () => {
+      const { data } = await axios.get(`https://e-noticeboard-server.onrender.com/office/${id}`)
+      setSingleData(data)
+      // console.log(data)
+    }
+    getOfficeInfo()
+  }, [id])
+
+
+  const navigate = useNavigate()
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const url = `https://e-noticeboard-server.onrender.com/update/${id}`
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        name1,
+        number1,
+        name2,
+        number2
+      })
+    }).then(res => {
+      console.log('server side response')
+      window.alert('data inserted Successfully')
+      navigate('/')
     })
+  }
 
-    const fetchData = async () => {
-        const response = await fetch(`https://immense-inlet-62545.herokuapp.com/products/${id}`);
-        const data = await response.json();
-        console.log(data);
-        setSingleNotice(data)
-      };
-      useEffect(() => {
-        fetchData();
-      }, []);
-
-    //Handle form state
-    const handleChange = e => {
-        const newUserInfo = { ...user }
-        newUserInfo[e.target.name] = e.target.value
-        setUser(newUserInfo)
-    }
-
-
-    const handleSubmit = e => {
-        e.preventDefault()
-        const { noticeNo, title,shortTitle,batchName,date,utitle, imageURL } = user;
-        console.log(user);
-
-        
-        const url = `https://immense-inlet-62545.herokuapp.com/products/update/${id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                noticeNo, title,shortTitle,batchName,date,utitle, imageURL
-            })
-        })
-            .then(res => {
-                console.log(res.data);
-                console.log('server side response')
-                window.alert("data Updated Successfully")
-            })
-
-    };
-    const handleImageUpload = (event) => {
-        console.log(event.target.files);
-        const imageData = new FormData();
-        imageData.set('key', '2906dcc5c0c0e1002829616afd4bb281');
-        imageData.append('image', event.target.files[0])
-
-        axios.post('https://api.imgbb.com/1/upload', imageData)
-            .then(res => {
-                console.log(res.data.data.display_url);
-                setImageURL(res.data.data.display_url);
-                setUser({ ...user, imageURL: res.data.data.display_url })
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }
-   
-
-    return (
-        <div className="container">
-        <div className='row'>
-            <div className="sidenav col-4">
-                <Link className="nav-link text-white" aria-current="page" to="/updateNotice">All Notices</Link>
-                <Link className="nav-link text-white" aria-current="page" to="/form">Upload Notice</Link>
-                <Link className="nav-link text-white" aria-current="page" to="/upcomingNotice">Upcoming Notice</Link>
-                <Link className="nav-link text-white" aria-current="page" to="/">Home</Link>
-            </div>
-            <div id="upload" className='pt-4 ml-5 mt-5  col-8'>
-                <h2>New Upload Notice</h2>
-                <hr />
-                <form class="upload-form" onSubmit={handleSubmit}>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="notice-number"><b><big>Notice No</big></b> </label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <input type="text" class="form-control form-control-sm" id="notice-number" required placeholder="Type Notice No"
-                                name='noticeNo'
-                                onChange={handleChange}
-                                defaultValue={singleNotice.noticeNo}
-                            />
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="notice-title"><b><big>Notice Title</big></b></label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <input type="text" class="form-control form-control-sm" id="notice-title" placeholder="Type The Main Title of Notice" required
-                                name='title'
-                                onChange={handleChange}
-                                defaultValue={singleNotice.title}
-                            />
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="bulletin-title"><b><big>Bulletin Title</big></b></label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <input type="text" class="form-control form-control-sm" id="bulletin-title" required placeholder="Type a bulletin Title"
-                                name='shortTitle'
-                                onChange={handleChange}
-                                defaultValue={singleNotice.shortTitle}
-                            />
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputBatch"><big><b>Batch</b></big></label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <select id="inputBatch" class="form-control form-control-sm"
-                                name='batchName'
-                                onChange={handleChange}
-                                defaultValue={singleNotice.batchName}
-                            >
-                                <option selected>Choose...</option>
-                                <option>ALL BATCH</option>
-                                <option>ICE 4th BATCH</option>
-                                <option>ICE 5th BATCH</option>
-                                <option>ICE 6th BATCH</option>
-                                <option>ICE 7th BATCH</option>
-                                <option>ICE 8th BATCH</option>
-                                <option>ICE 9th BATCH</option>
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="lastdate"><big><b>Last Date</b></big></label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <input class="form-control form-control-sm" type="date" id=""
-                                name='date'
-                                onChange={handleChange}
-                                defaultValue={singleNotice.date}
-
-                            />
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="upcoming-event"><big><b>Upcoming Event Title</b></big></label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <input class="form-control form-control-sm" id="upcoming-event" placeholder='Type The Upcoming Event Title'
-                                name='utitle'
-                                onChange={handleChange}
-                                defaultValue={singleNotice.uTitle}
-
-                            />
-                        </div>
-
-
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="image"><big><b>Upload Image</b></big></label>
-                        </div>
-                        <div class="form-group col-md-8">
-                            <input type="file" class="form-control form-control-sm" id="Image"
-                                name='imageURL'
-                                onChange={handleImageUpload}
-
-                            />
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary w-50">Upload Notice </button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
+  return (
+    <div className='container'>
+      <div className='row'>
+        <div className='sidenav col-4'>
+          <Link
+            className='nav-link text-white'
+            aria-current='page'
+            to='/updateNotice'
+          >
+            All Notices
+          </Link>
+          <Link className='nav-link text-white' aria-current='page' to='/form'>
+            Form
+          </Link>
+          <Link
+            className='nav-link text-white'
+            aria-current='page'
+            to='/updateImage'
+          >
+            Activities
+          </Link>
+          <Link
+            className='nav-link text-white'
+            aria-current='page'
+            to='/office'
+          >
+            Officiary
+          </Link>
+          <Link className='nav-link text-white' aria-current='page' to='/'>
+            Home
+          </Link>
         </div>
-    </div>
-    );
-};
+        <div id='upload' className='pt-4 ml-5 mt-5  col-8'>
+          <h2>New Info</h2>
+          <hr />
+          <form class='upload-form' onSubmit={handleSubmit}>
+            <div class='form-row'>
+              <div class='form-group col-md-3'>
+                <label for='notice-number'>
+                  <b>
+                    <big>Email</big>
+                  </b>{' '}
+                </label>
+              </div>
+              <div class='form-group col-md-8'>
+                <input
+                  type='email'
+                  class='form-control form-control-sm'
+                  id='notice-number'
+                  name='email'
+                  onChange={e => setEmail(e.target.value)}
+                  defaultValue={singleData.email}
+                />
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='form-group col-md-3'>
+                <label for='notice-title'>
+                  <b>
+                    <big>Name</big>
+                  </b>
+                </label>
+              </div>
+              <div class='Form-group col-md-4'>
+                <input
+                  type='text'
+                  class='form-control form-control-sm'
+                  id='notice-title'
+                  name='name1'
+                  onChange={e => setName1(e.target.value)}
+                  defaultValue={singleData.name1}
+                />
+              </div>
+              <div class='Form-group col-md-4'>
+                <input
+                  type='text'
+                  class='form-control form-control-sm'
+                  id='notice-title'
+                  name='number1'
+                  onChange={e => setNumber1(e.target.value)}
+                  defaultValue={singleData.number1}
+                />
+              </div>
+            </div>
 
-export default UpdateData;
+            <div class='form-row'>
+              <div class='form-group col-md-3'>
+                <label for='notice-title'>
+                  <b>
+                    <big>Name</big>
+                  </b>
+                </label>
+              </div>
+              <div class='Form-group col-md-4'>
+                <input
+                  type='text'
+                  class='form-control form-control-sm'
+                  id='notice-title'
+                  name='name2'
+                  onChange={e => setName2(e.target.value)}
+                  defaultValue={singleData.name2}
+                />
+              </div>
+              <div class='Form-group col-md-4'>
+                <input
+                  type='text'
+                  class='form-control form-control-sm'
+                  id='notice-title'
+                  name='number2'
+                  onChange={e => setNumber2(e.target.value)}
+                  defaultValue={singleData.number2}
+                />
+              </div>
+            </div>
+
+            <div class='form-row'>
+              <div class='form-group col-md-12 text-center'>
+                <button type='submit' class='btn btn-primary w-50'>
+                  Submit{' '}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default UpdateData

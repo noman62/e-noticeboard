@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import './Form.css'
-const Form = () => {
-  const [imageURL, setImageURL] = useState(null)
+import './OfficeForm.css'
+const OfficeForm = () => {
   const [user, setUser] = useState({
-    noticeNo: '',
-    title: '',
-    batchName: '',
-    date: '',
-    imageURL: ''
+    email: '',
+    name1: '',
+    number1: '',
+    name2: '',
+    number2: ''
   })
 
-  //Handle form state
   const handleChange = e => {
     const newUserInfo = { ...user }
     newUserInfo[e.target.name] = e.target.value
@@ -21,42 +19,24 @@ const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    const { noticeNo, title, batchName, date, imageURL } = user
-    const url = `https://e-noticeboard-server.onrender.com/addProduct`
+    const { email, name1, number1, name2, number2 } = user
+    const url = `https://e-noticeboard-server.onrender.com/officeInfo`
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        noticeNo,
-        title,
-        batchName,
-        date,
-        imageURL
+        email,
+        name1,
+        number1,
+        name2,
+        number2
       })
     }).then(res => {
       console.log('server side response')
       window.alert('data inserted Successfully')
     })
-  }
-
-  const handleImageUpload = event => {
-    console.log(event.target.files)
-    const imageData = new FormData()
-    imageData.set('key', '2906dcc5c0c0e1002829616afd4bb281')
-    imageData.append('image', event.target.files[0])
-
-    axios
-      .post('https://api.imgbb.com/1/upload', imageData)
-      .then(res => {
-        console.log(res.data.data.display_url)
-        setImageURL(res.data.data.display_url)
-        setUser({ ...user, imageURL: res.data.data.display_url })
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
 
   return (
@@ -92,25 +72,25 @@ const Form = () => {
           </Link>
         </div>
         <div id='upload' className='pt-4 ml-5 mt-5  col-8'>
-          <h2>New Upload Notice</h2>
+          <h2>New Info</h2>
           <hr />
           <form class='upload-form' onSubmit={handleSubmit}>
             <div class='form-row'>
               <div class='form-group col-md-3'>
                 <label for='notice-number'>
                   <b>
-                    <big>Notice No</big>
+                    <big>Email</big>
                   </b>{' '}
                 </label>
               </div>
               <div class='form-group col-md-8'>
                 <input
-                  type='text'
+                  type='email'
                   class='form-control form-control-sm'
                   id='notice-number'
                   required
-                  placeholder='Type Notice No'
-                  name='noticeNo'
+                  placeholder='Type Email'
+                  name='email'
                   onChange={handleChange}
                   defaultValue=''
                 />
@@ -120,83 +100,66 @@ const Form = () => {
               <div class='form-group col-md-3'>
                 <label for='notice-title'>
                   <b>
-                    <big>Notice Title</big>
+                    <big>Name</big>
                   </b>
                 </label>
               </div>
-              <div class='form-group col-md-8'>
+              <div class='Form-group col-md-4'>
                 <input
                   type='text'
                   class='form-control form-control-sm'
                   id='notice-title'
-                  placeholder='Type The Main Title of Notice'
+                  placeholder='Type Name'
                   required
-                  name='title'
+                  name='name1'
+                  onChange={handleChange}
+                  defaultValue=''
+                />
+              </div>
+              <div class='Form-group col-md-4'>
+                <input
+                  type='text'
+                  class='form-control form-control-sm'
+                  id='notice-title'
+                  placeholder='Type  Number'
+                  required
+                  name='number1'
                   onChange={handleChange}
                   defaultValue=''
                 />
               </div>
             </div>
+
             <div class='form-row'>
               <div class='form-group col-md-3'>
-                <label for='inputBatch'>
-                  <big>
-                    <b>Batch</b>
-                  </big>
+                <label for='notice-title'>
+                  <b>
+                    <big>Name</big>
+                  </b>
                 </label>
               </div>
-              <div class='form-group col-md-8'>
-                <select
-                  id='inputBatch'
-                  class='form-control form-control-sm'
-                  name='batchName'
-                  onChange={handleChange}
-                >
-                  <option selected>Choose...</option>
-                  <option>ALL BATCH</option>
-                  <option>ICE 4th BATCH</option>
-                  <option>ICE 5th BATCH</option>
-                  <option>ICE 6th BATCH</option>
-                  <option>ICE 7th BATCH</option>
-                  <option>ICE 8th BATCH</option>
-                  <option>ICE 9th BATCH</option>
-                </select>
-              </div>
-            </div>
-            <div class='form-row'>
-              <div class='form-group col-md-3'>
-                <label for='lastdate'>
-                  <big>
-                    <b>Last Date</b>
-                  </big>
-                </label>
-              </div>
-              <div class='form-group col-md-8'>
+              <div class='Form-group col-md-4'>
                 <input
+                  type='text'
                   class='form-control form-control-sm'
-                  type='date'
-                  id=''
-                  name='date'
+                  id='notice-title'
+                  placeholder='Type Name'
+                  required
+                  name='name2'
                   onChange={handleChange}
                   defaultValue=''
                 />
               </div>
-            </div>
-            <div class='form-row'>
-              <div class='form-group col-md-3'>
-                <label for='image'>
-                  <big>
-                    <b>Upload Image</b>
-                  </big>
-                </label>
-              </div>
-              <div class='form-group col-md-8'>
+              <div class='Form-group col-md-4'>
                 <input
-                  type='file'
+                  type='text'
                   class='form-control form-control-sm'
-                  id='Image'
-                  name='imageURL'
-                  onChange={handleImageUpload}
+                  id='notice-title'
+                  placeholder='Type Number'
+                  required
+                  name='number2'
+                  onChange={handleChange}
+                  defaultValue=''
                 />
               </div>
             </div>
@@ -204,7 +167,7 @@ const Form = () => {
             <div class='form-row'>
               <div class='form-group col-md-12 text-center'>
                 <button type='submit' class='btn btn-primary w-50'>
-                  Upload Notice{' '}
+                  Submit{' '}
                 </button>
               </div>
             </div>
@@ -215,4 +178,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default OfficeForm
