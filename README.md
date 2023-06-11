@@ -6,4 +6,4 @@
 #### 4.Convenient and centralized way to keep everyone informed
 #### 5.Enhances communication and connection within the department
 
-### Live site-
+### Live site- https://e-noticeboard-nu.vercel.app/
