@@ -130,7 +130,7 @@ const Homepage = () => {
         </div>
       </div>
 
-      <footer>
+      <footer class='fot1'>
         <div class='row marquee'>
           <div class='col-2 pt-2  top-time '>
             <p class='text-center pt-1'>Top Notice</p>
