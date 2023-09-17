@@ -72,7 +72,7 @@ const Homepage = () => {
               <h6>Info</h6>
 
               <p>Office: 9:00 AM-4:00 PM</p>
-              <p>Launch: 1:00 AM-2:00 PM</p>
+              <p>Lunch: 1:00 AM-2:00 PM</p>
               <p>A/C: 0200005277182 </p>
               {info.map(latest => {
                 return (
@@ -132,16 +132,18 @@ const Homepage = () => {
 
       <footer>
         <div class='row marquee'>
-          <div class='col-2   top-time '>
-            <p class='text-center pt-2'>Top Notice</p>
+          <div class='col-2 pt-2  top-time '>
+            <p class='text-center pt-1'>Top Notice</p>
           </div>
-          <div class='col-8  top-time1'>
+          <div class='col-8 pt-2  top-time1'>
             <marquee>
+            <span class='mr-4'>||</span>
               {notices.map(item => (
                 <span className='space' key={item._id}>
                   {item.title}{' '}
-                </span>
-              ))}
+                  <span class='ml-4'>||</span>
+                </span>        
+            ))}
             </marquee>
           </div>
           <div class='col-2 c  top-time '>
