@@ -147,7 +147,7 @@ const Homepage = () => {
             </marquee>
           </div>
           <div class='col-2 c  top-time '>
-            <p class='mb-0'>
+            <p class='pb-0'>
               <CurrentDate />
             </p>
           </div>

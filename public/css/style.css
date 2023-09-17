@@ -21,7 +21,8 @@
     background-color: #010f4e;
     color: white;
     /* font-style:oblique; */
-    border-bottom: 5px solid #010f4e;
+    border-bottom: 3px solid #010f4e;
+    margin-bottom: -15px;
 }
 
 .marquee {
@@ -48,6 +49,7 @@
     border-bottom-right-radius: 5px; */
     /* box-shadow: 1px 1px 1px rgb(255, 255, 255); */
     margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .marquee marquee {
