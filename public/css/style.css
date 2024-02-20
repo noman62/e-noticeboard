@@ -196,10 +196,9 @@
     height: 20vh;
     margin-bottom: 10px;
     width: 15vw; 
-    border-radius: 5%;
     padding-inline: 25px;
     padding-top: 5px;
-    border-radius: 20%;
+    border-radius: 10%;
 }
 .marqueeTwo-content1 li{
     border: 2px solid black;
