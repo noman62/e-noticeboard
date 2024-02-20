@@ -59,7 +59,15 @@ const Homepage = () => {
 
         <div class='row mt-3'>
         <div class='col-md-2 mt-1 marquee-image'>
-            <h4 class='marquee-heading font-weight-bolder'>Faculty Member</h4>
+            <h4 class='marquee-heading font-weight-bolder'>Faculty Members</h4>
+            <div class="chairman card">
+                <img src="https://i.ibb.co/zmSTM3F/Ashik-Sir.jpg"  alt="..."/>
+                <div class="card-body p-0">
+                  <h6 class='font-weight-bold'>Dr. Md. Ashikur Rahman Khan</h6>
+                  <p class="mb-0">Professor & Chairman</p>
+                  <p>Email: ashik@nstu.edu.bd</p>            
+                </div>
+            </div>
             <div class='marqueeTwo'>
               <ul class='marqueeTwo-content1 text-center'>
                 <li>
@@ -228,24 +236,21 @@ const Homepage = () => {
               })}
             </ul>
             <ul class='notice mt-2'>
-              <h6>Info</h6>
-
-              <p>Office: 9:00 AM-4:00 PM</p>
-              <p>Lunch: 1:00 AM-2:00 PM</p>
-              <p>A/C: 0200005277182 </p>
-              {info.map(latest => {
-                return (
-                  <div>
-                    <p>{latest.email}</p>
-                    <p>
-                      {latest.name1}:{latest.number1}{' '}
-                    </p>
-                    <p>
-                      {latest.name2}:{latest.number2}{' '}
-                    </p>
-                  </div>
-                )
-              })}
+              <div class='marqueeTwo-content2'>
+              <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+              <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+              <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+             <li><p>"স্বপ্ন সেটা নয় যেটা মানুষ ঘুমিয়ে দেখে। স্বপ্ন সেটাই, যেটা পূরণের প্রত্যাশা মানুষকে ঘুমাতে দেয় না" <br /> <small>- এ পি জে আব্দুল কালাম</small></p></li>
+              </div>
+        
             </ul>
           </div>
           <div class='col-md-6 p-1'>
@@ -276,7 +281,7 @@ const Homepage = () => {
           </div>
           <div class='col-md-2 mt-1 marquee-image'>
             <h4 class='marquee-heading '>Activities</h4>
-            <div class='marqueeTwo'>
+            <div class='marqueeTwo1'>
               <ul class='marqueeTwo-content text-center'>
                 <li>
                   {images.map(item => (
@@ -291,7 +296,9 @@ const Homepage = () => {
       <footer class='fot1'>
         <div class='row marquee'>
           <div class='col-2 pt-2  top-time '>
-            <p class='text-center pt-1'>Top Notice</p>
+          <p class='pb-0'>
+              <CurrentDate />
+            </p>
           </div>
           <div class='col-8 pt-2  top-time1'>
             <marquee>
@@ -305,9 +312,8 @@ const Homepage = () => {
             </marquee>
           </div>
           <div class='col-2 c  top-time '>
-            <p class='pb-0'>
-              <CurrentDate />
-            </p>
+            <p class='mb-0 mt-2'>Email: <small>ice@office.nstu.edu.bd</small></p>
+            <p>A/C: 0200005277182 </p>
           </div>
         </div>
       </footer>
