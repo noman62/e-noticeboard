@@ -295,7 +295,7 @@ const Homepage = () => {
       </div>
       <footer class='fot1'>
         <div class='row marquee'>
-          <div class='col-2 pt-2  top-time '>
+          <div class='col-2  top-time '>
           <p class='pb-0'>
               <CurrentDate />
             </p>
@@ -312,7 +312,7 @@ const Homepage = () => {
             </marquee>
           </div>
           <div class='col-2 c  top-time '>
-            <p class='mb-0 mt-2'>Email: <small>ice@office.nstu.edu.bd</small></p>
+            <p class='mb-0'>Email: <small>ice@office.nstu.edu.bd</small></p>
             <p>A/C: 0200005277182 </p>
           </div>
         </div>
