@@ -140,7 +140,7 @@
 .marqueeTwo-content {
     list-style: none;
     height: 77vh;
-    animation: scrolling 25s linear infinite;
+    animation: scrolling 45s linear infinite;
 }
 .marqueeTwo-content1 {
     list-style: none;
