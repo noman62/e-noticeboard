@@ -61,7 +61,7 @@ const Homepage = () => {
         <div class='col-md-2 mt-1 marquee-image'>
             <h4 class='marquee-heading font-weight-bolder'>Faculty Members</h4>
             <div class="chairman card">
-                <img src="https://i.ibb.co/zmSTM3F/Ashik-Sir.jpg"  alt="..."/>
+                <img src="https://i.ibb.co/RyppJR9/IHT-7310-removebg-preview.png"  alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Dr. Md. Ashikur Rahman Khan</h6>
                   <p class="mb-0">Professor & Chairman</p>
@@ -72,7 +72,7 @@ const Homepage = () => {
               <ul class='marqueeTwo-content1 text-center'>
                 <li>
                 <div class="card">
-                <img src="https://i.ibb.co/zmSTM3F/Ashik-Sir.jpg"  alt="..."/>
+                <img src="https://i.ibb.co/RyppJR9/IHT-7310-removebg-preview.png"  alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Dr. Md. Ashikur Rahman Khan</h6>
                   <p class="mb-0">Professor & Chairman</p>
@@ -202,7 +202,7 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="https://www.nstu.edu.bd/assets/images/avatar/tHhmBbghTZ1643882363.png" class="card-img-top" alt="..."/>
+                <img src="https://i.ibb.co/WzcGh3n/IHT-7325-removebg-preview.png" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Md. Sabbir Ejaz</h6>
                   <p class="mb-0">Lecturer</p>
@@ -212,7 +212,7 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="https://www.nstu.edu.bd/assets/images/avatar/WOdxqQFa7T1643992286.jpg" class="card-img-top" alt="..."/>
+                <img src="https://i.ibb.co/xhv2CQh/Whats-App-Image-2024-02-20-at-12-51-12-PM.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Mohammad Kamrul Hasan</h6>
                   <p class="mb-0">Lecturer</p>
