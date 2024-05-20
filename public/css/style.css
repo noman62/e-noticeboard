@@ -33,7 +33,7 @@
 }
 
 .marquee .top-notice {
-    background-color: #010f4e;
+    background-color: #ed3bc9;
     color: rgb(253, 253, 253);
     border: 2px solid rgb(255, 255, 255);
     border-top-right-radius: 5px;
@@ -51,7 +51,10 @@
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
-
+.noticeList{
+    text-align: start;
+    padding-left: 2px;
+}
 .marquee marquee {
 
     width: 100%;
@@ -70,7 +73,7 @@
     border-top-left-radius: 0px;
     border-top-right-radius: 0px; */
     box-shadow: 1px 1px 6px rgb(144, 143, 143);
-    height: 39vh;
+    height: 42vh;
     overflow: hidden;
     /* border: 5px solid #010f4e; */
     margin-inline: -20px;
@@ -85,9 +88,9 @@
 
 }
 
-.notice h4 {
+.notice h4, .upor h4{
 
-    background-color: #010f4e;
+    background-color:#71050c;
     color: rgb(255, 255, 255);
     padding: 5px;
     box-shadow: 2px 0px 5px rgb(160, 159, 159);
@@ -95,7 +98,7 @@
 
 .notice h6 {
 
-    background-color: #010f4e;
+    background-color: #71050c;
     color: rgb(255, 255, 255);
     padding: 5px;
     box-shadow: 2px 0px 5px rgb(160, 159, 159);
@@ -111,6 +114,15 @@
 
 .carousel-caption {
     color: black;
+}
+.upo{
+    margin-top: -60px;
+}
+.upo h5{
+    background-color: #71050c;
+    color: rgb(255, 255, 255);
+    padding:5px 2px 5px 2px;
+    box-shadow: 2px 0px 5px rgb(160, 159, 159);
 }
 
 .marqueeTwo {
