@@ -125,16 +125,6 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="https://www.nstu.edu.bd/assets/images/avatar/QQ78QwpjNY1645367505.jpg" class="card-img-top" alt="..."/>
-                <div class="card-body p-0">
-                  <h6 class='font-weight-bold'>K. M. Aslam Uddin</h6>
-                  <p class="mb-0">Assistant Professor</p>
-                  <p>Email: aslam@nstu.edu.bd</p>            
-                </div>
-              </div>
-                </li>
-                <li>
-                <div class="card">
                 <img src="https://www.nstu.edu.bd/assets/images/avatar/bEzabhUI941601267437.JPG" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Sultana Jahan Soheli</h6>
@@ -155,19 +145,9 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="https://www.nstu.edu.bd/assets/images/avatar/vTPQqLGO9J1580538351.png" class="card-img-top" alt="..."/>
-                <div class="card-body p-0">
-                  <h6 class='font-weight-bold'>Nishu Nath <small>(Study Leave)</small></h6>
-                  <p class="mb-0">Assistant Professor</p>
-                  <p>Email: nishunath.ice@nstu.edu.bd</p>            
-                </div>
-              </div>
-                </li>
-                <li>
-                <div class="card">
                 <img src="https://www.nstu.edu.bd/assets/images/avatar/yz6XzLwrGA1597170802.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
-                  <h6 class='font-weight-bold'>Apurba Adhikary <small>(Study Leave)</small></h6>
+                  <h6 class='font-weight-bold'>Apurba Adhikary</h6>
                   <p class="mb-0">Assistant Professor</p>
                   <p>Email: apurba@nstu.edu.bd</p>            
                 </div>
@@ -177,7 +157,7 @@ const Homepage = () => {
                 <div class="card">
                 <img src="https://www.nstu.edu.bd/assets/images/avatar/1PcV6TP1IU1558000205.JPG" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
-                  <h6 class='font-weight-bold'>Main Uddin <small>(Study Leave)</small></h6>
+                  <h6 class='font-weight-bold'>Main Uddin </h6>
                   <p class="mb-0">Assistant Professor</p>
                   <p>Email: mainuddin.ice@nstu.edu.bd</p>            
                 </div>
