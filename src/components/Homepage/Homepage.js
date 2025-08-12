@@ -205,7 +205,7 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="" class="card-img-top" alt="..."/>
+                <img src="https://www.nstu.edu.bd/assets/images/avatar/JePPJIZ0LJ155798765111.jpeg" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Ishtiaq Ahammad</h6>
                   <p class="mb-0">Lecturer</p>
