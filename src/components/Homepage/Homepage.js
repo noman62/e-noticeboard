@@ -145,9 +145,9 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="https://www.nstu.edu.bd/assets/images/avatar/yz6XzLwrGA1597170802.jpg" class="card-img-top" alt="..."/>
+                <img src="https://ibb.co.com/h1fJZT2N" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
-                  <h6 class='font-weight-bold'>Apurba Adhikary</h6>
+                  <h6 class='font-weight-bold'>Dr. Apurba Adhikary</h6>
                   <p class="mb-0">Assistant Professor</p>
                   <p>Email: apurba@nstu.edu.bd</p>            
                 </div>
@@ -157,7 +157,7 @@ const Homepage = () => {
                 <div class="card">
                 <img src="https://www.nstu.edu.bd/assets/images/avatar/1PcV6TP1IU1558000205.JPG" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
-                  <h6 class='font-weight-bold'>Main Uddin </h6>
+                  <h6 class='font-weight-bold'>Dr. Main Uddin </h6>
                   <p class="mb-0">Assistant Professor</p>
                   <p>Email: mainuddin.ice@nstu.edu.bd</p>            
                 </div>
@@ -178,7 +178,7 @@ const Homepage = () => {
                 <img src="https://www.nstu.edu.bd/assets/images/avatar/7XKLqPEHKI1644176105.JPG" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Md. Mahbubul Alam</h6>
-                  <p class="mb-0">Lecturer</p>
+                  <p class="mb-0">Assistant Professor</p>
                   <p>Email: mahbubulalam@nstu.edu.bd</p>            
                 </div>
               </div>
@@ -188,7 +188,7 @@ const Homepage = () => {
                 <img src="https://i.ibb.co/WzcGh3n/IHT-7325-removebg-preview.png" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Md. Sabbir Ejaz</h6>
-                  <p class="mb-0">Lecturer</p>
+                  <p class="mb-0">Assistant Professor</p>
                   <p>Email: sabbirejaz.ice@nstu.edu.bd</p>            
                 </div>
               </div>
@@ -198,8 +198,18 @@ const Homepage = () => {
                 <img src="https://i.ibb.co/xhv2CQh/Whats-App-Image-2024-02-20-at-12-51-12-PM.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Mohammad Kamrul Hasan</h6>
-                  <p class="mb-0">Lecturer</p>
+                  <p class="mb-0">Assistant Professor</p>
                   <p>Email: kamrul.ice@nstu.edu.bd</p>            
+                </div>
+              </div>
+                </li>
+                <li>
+                <div class="card">
+                <img src="" class="card-img-top" alt="..."/>
+                <div class="card-body p-0">
+                  <h6 class='font-weight-bold'>Ishtiaq Ahammad</h6>
+                  <p class="mb-0">Lecturer</p>
+                  <p>Email: ishtiaq.ice@nstu.edu.bd</p>            
                 </div>
               </div>
                 </li>
