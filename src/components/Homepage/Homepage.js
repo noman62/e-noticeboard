@@ -145,7 +145,7 @@ const Homepage = () => {
                 </li>
                 <li>
                 <div class="card">
-                <img src="https://ibb.co.com/h1fJZT2N" class="card-img-top" alt="..."/>
+                <img src="https://i.ibb.co.com/KzwpL8Vg/Apurbo-Sir.jpg" class="card-img-top" alt="..."/>
                 <div class="card-body p-0">
                   <h6 class='font-weight-bold'>Dr. Apurba Adhikary</h6>
                   <p class="mb-0">Assistant Professor</p>
